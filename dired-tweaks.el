@@ -22,4 +22,7 @@
 ; I found this snippet of code online.
 ; when two vertical instances of dired are open, the user will be able to copy/move files from one buffer to the next.
 ; from what I can tell it does not affect dired when only one buffer is opened.
-(setq dired-dwim-target t) 
+(setq dired-dwim-target t)
+
+;; ---------- File Size ----------------
+(setq dired-listing-switches "-alh")
