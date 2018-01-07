@@ -23,7 +23,7 @@
 ;          | ||           | \ \/ /                        ||          || |
 
 (package-initialize)
-(setq user-init-file "~/.emacs.d/.emacs")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -113,8 +113,8 @@
 (global-visual-line-mode 1)
 
 ;; ------------------- Misc Files to be Loaded  --------------------------
-(load-file "~/Documents/Emacs/macros.el")
-(load-file "~/Documents/Emacs/dired-tweaks.el")
+(load-file "~/.emacs.d/macros.el")
+(load-file "~/.emacs.d/dired-tweaks.el")
 
 ;; ------------------ Themes ---------------------------
 ;; ------------------ Xrecources-Theme -------------------
