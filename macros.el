@@ -1,4 +1,4 @@
- ;; -------------- Footnote --------------------
+;; -------------- Footnote --------------------
 (fset 'cc-footnote
    [?/ ?f backspace backspace ?\\ ?f ?o ?o ?t ?n ?o ?t ?e ?\{ ?\} left])
 
