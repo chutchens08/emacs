@@ -146,3 +146,6 @@
 ;; ------------------ Ace-Jump-Mode -----------------
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+;; ------------------ Magit Stuff -------------------
+(define-key global-map (kbd "C-c g") 'magit-status)
