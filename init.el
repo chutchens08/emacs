@@ -35,7 +35,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -149,3 +149,10 @@
 
 ;; ------------------ Magit Stuff -------------------
 (define-key global-map (kbd "C-c g") 'magit-status)
+
+;; ------------------ Multiple Cursors --------------
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
