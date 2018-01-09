@@ -33,9 +33,12 @@
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(menu-bar-mode nil)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -53,10 +56,11 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
-;; ------------------ Elpa --------------------------
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+
+;; ------------------ Access to Org Mode Archives --------------
+(require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+
 
 ;; ----------------- Hunspell ----------------------
 
@@ -163,3 +167,6 @@
 (global-set-key (kbd "C-c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+
+
