@@ -60,8 +60,6 @@
 ;; ------------------ Access to Org Mode Archives --------------
 (require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
-
-
 ;; ----------------- Hunspell ----------------------
 
 ; find aspell and hunspell automatically
