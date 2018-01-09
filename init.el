@@ -33,6 +33,9 @@
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(menu-bar-mode nil)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
     (multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
