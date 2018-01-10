@@ -33,6 +33,7 @@
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(menu-bar-mode nil)
+ '(org-agenda-files nil)
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
@@ -165,4 +166,3 @@
 (global-set-key (kbd "C-c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
-
