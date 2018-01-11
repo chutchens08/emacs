@@ -33,10 +33,10 @@
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(menu-bar-mode nil)
- '(org-agenda-files nil)
+ '(org-agenda-files (quote ("~/Documents/OrgMode/todo/todo.org")))
  '(org-modules
    (quote
-    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
     (org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
@@ -166,3 +166,18 @@
 (global-set-key (kbd "C-c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+;; ------------------ Org Agenda View ------------------
+(setq org-agenda-custom-commands
+      '(("c" "Simple agenda view"
+         ((agenda "")
+          (alltodo "")))))
+(defun air-org-skip-subtree-if-habit ()
+  "Skip an agenda entry if it has a STYLE property equal to \"habit\"."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
+    (if (string= (org-entry-get nil "STYLE") "habit")
+        subtree-end
+      nil)))
+(setq inhibit-splash-screen t)
+(org-agenda-list)
+(delete-other-windows)
