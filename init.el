@@ -172,12 +172,7 @@
       '(("c" "Simple agenda view"
          ((agenda "")
           (alltodo "")))))
-(defun air-org-skip-subtree-if-habit ()
-  "Skip an agenda entry if it has a STYLE property equal to \"habit\"."
-  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
-    (if (string= (org-entry-get nil "STYLE") "habit")
-        subtree-end
-      nil)))
+;; ------------------ Org Agenda at Startup ----------------
 (setq inhibit-splash-screen t)
-(org-agenda-list)
+(org-agenda nil "c")
 (delete-other-windows)
