@@ -162,7 +162,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; ------------------- Eshell Global -------------------
-(globale-set-key (kbd "C-c s") 'shell)
+(global-set-key (kbd "C-c s") 'shell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
