@@ -60,10 +60,6 @@
 ;; ------------------ Set Emacs Default Browser -----------------
 (setq browse-url-browser-function 'eww-browse-url)
 
-
-;; ------------------ Access to Org Mode Archives --------------
-(require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
 ;; ----------------- Hunspell ----------------------
 
 ; find aspell and hunspell automatically
@@ -113,11 +109,6 @@
 (load-file "~/Documents/Emacs/input-methods/semitic-translit.el")
 (load-file "~/Documents/Emacs/input-methods/ugaritic.el")
 (load-file "~/Documents/Emacs/input-methods/akkadian.el")
-
-;; ------------------- Org Bullets Mode ------------------
-(add-to-list 'load-path "~/.emacs.d/vendor/org-bullets")
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; ------------------- Visual Line Mode -----------------
 (global-visual-line-mode 1)
@@ -170,6 +161,17 @@
 (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+               ;;;;     ;;;;;;     ;;;;                 ;;;;
+             ;;    ;;   ;;   ;;   ;;  ;;                ;;;;
+            ;;      ;;  ;;  ;;   ;;                     ;;;;
+            ;;      ;;  ;;;;;;   ;;  ;;;;               ;;;;
+             ;;    ;;   ;;   ;;   ;;  ;;                ;;;;
+               ;;;;     ;;   ;;    ;;;;                 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; ------------------ Org Agenda View ------------------
 (setq org-agenda-custom-commands
       '(("c" "Simple agenda view"
@@ -181,3 +183,9 @@
 (delete-other-windows)
 (setq org-log-done 'time)
 (setq org-agenda-skip-scheduled-if-done t)
+;; ------------------- Org Bullets Mode ------------------
+(add-to-list 'load-path "~/.emacs.d/vendor/org-bullets")
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;; ------------------ Access to Org Mode Archives --------------
+(require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
