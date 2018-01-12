@@ -161,6 +161,9 @@
 (global-set-key (kbd "C-c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;; ------------------- Eshell Global -------------------
+(globale-set-key (kbd "C-c s") 'shell)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                ;;;;     ;;;;;;     ;;;;                 ;;;;
