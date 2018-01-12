@@ -176,3 +176,5 @@
 (setq inhibit-splash-screen t)
 (org-agenda nil "c")
 (delete-other-windows)
+
+(setq org-log-done 'time)
