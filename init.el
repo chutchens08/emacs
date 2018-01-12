@@ -57,6 +57,9 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+;; ------------------ Set Emacs Default Browser -----------------
+(setq browse-url-browser-function 'eww-browse-url)
+
 
 ;; ------------------ Access to Org Mode Archives --------------
 (require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
@@ -176,5 +179,5 @@
 (setq inhibit-splash-screen t)
 (org-agenda nil "c")
 (delete-other-windows)
-
 (setq org-log-done 'time)
+(setq org-agenda-skip-scheduled-if-done t)
