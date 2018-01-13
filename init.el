@@ -39,7 +39,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (ace-window which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -166,6 +166,9 @@
 
 ;; ------------------- Which Key -----------------------
 (global-set-key (kbd "C-c w") 'which-key-mode)
+
+;; ------------------- Ace Window ----------------------
+(global-set-key (kbd "M-p") 'ace-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
