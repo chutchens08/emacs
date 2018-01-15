@@ -165,10 +165,13 @@
 (global-set-key (kbd "C-c s") 'shell)
 
 ;; ------------------- Which Key -----------------------
-(global-set-key (kbd "C-c w") 'which-key-mode)
+;;(global-set-key (kbd "C-c w") 'which-key-mode)
+(require 'which-key)
+(which-key-mode)
 
 ;; ------------------- Ace Window ----------------------
 (global-set-key (kbd "M-p") 'ace-window)
+(setq aw-dispatch-always t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
