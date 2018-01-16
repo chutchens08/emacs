@@ -39,13 +39,13 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (ace-window which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
  '(set-frame-parameter nil)
- '(smtpmail-smtp-server "smtp.googlemail.com")
- '(smtpmail-smtp-service 25)
+ '(smtpmail-smtp-server "smtp.googlemail.com" t)
+ '(smtpmail-smtp-service 25 t)
  '(tool-bar-mode nil))
 
 ;; ------------------ Melpa ------------------------
@@ -172,6 +172,9 @@
 ;; ------------------- Ace Window ----------------------
 (global-set-key (kbd "M-p") 'ace-window)
 (setq aw-dispatch-always t)
+
+;; ------------------- Minimap Mode --------------------
+(global-set-key (kbd "C-c m") 'minimap-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
