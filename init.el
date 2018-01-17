@@ -204,3 +204,4 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; ------------------ Access to Org Mode Archives --------------
 (require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
