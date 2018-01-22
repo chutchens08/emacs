@@ -32,7 +32,9 @@
  '(border-width 0)
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
- '(md4rd-subs-active (quote (emacs unixporn linux))) ;;this is obviously for md4rd
+ '(md4rd-subs-active
+   (quote
+    (emacs unixporn linux GradSchool Assyriology thinkpad thinkpadsetups)))
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/Documents/OrgMode/todo/todo.org")))
  '(org-modules
@@ -45,8 +47,8 @@
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
  '(set-frame-parameter nil)
- '(smtpmail-smtp-server "smtp.googlemail.com" t)
- '(smtpmail-smtp-service 25 t)
+ '(smtpmail-smtp-server "smtp.googlemail.com")
+ '(smtpmail-smtp-service 25)
  '(tool-bar-mode nil))
 
 ;; ------------------ Melpa ------------------------
@@ -181,6 +183,9 @@
 ;; So don't freak out because you don't know what they are doing up top.
 (add-to-list 'load-path "~/.emacs.d/vendor/md4rd")
 (require 'md4rd)
+
+;; ------------------- Steam Mode -----------------------
+(setq steam-username "Man Suits")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
