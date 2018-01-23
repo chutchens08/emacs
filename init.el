@@ -47,8 +47,8 @@
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
  '(set-frame-parameter nil)
- '(smtpmail-smtp-server "smtp.googlemail.com")
- '(smtpmail-smtp-service 25)
+ '(smtpmail-smtp-server "smtp.googlemail.com" t)
+ '(smtpmail-smtp-service 25 t)
  '(tool-bar-mode nil))
 
 ;; ------------------ Melpa ------------------------
@@ -212,4 +212,5 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; ------------------ Access to Org Mode Archives --------------
 (require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
 
