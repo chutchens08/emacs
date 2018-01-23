@@ -62,6 +62,7 @@
 
 ;; ------------------ Set Emacs Default Browser -----------------
 (setq browse-url-browser-function 'eww-browse-url) 
+
 ;; ----------------- Hunspell ----------------------
 
 ; find aspell and hunspell automatically
