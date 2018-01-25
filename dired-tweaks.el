@@ -9,6 +9,11 @@
 		  (interactive)
 		  (dired "~/Documents/OrgMode")))
 
+(global-set-key (kbd "C-c w")
+		(lambda ()
+		  (interactive)
+		  (dired "~/Downloads/School")))
+
 ;; ---------- Hidden Files ------------
 (require 'dired-x)
 (setq dired-omit-files "^\\...+$")
