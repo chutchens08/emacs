@@ -34,7 +34,7 @@
  '(horizontal-scroll-bar-mode nil)
  '(md4rd-subs-active
    (quote
-    (emacs unixporn linux GradSchool Assyriology thinkpad thinkpadsetups)))
+    (emacs unixporn linux GradSchool Assyriology thinkpad thinkpadsetups TrueFilm Cuneiform)))
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/Documents/OrgMode/todo/todo.org")))
  '(org-modules
@@ -42,7 +42,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (google-translate s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors magit ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -184,6 +184,14 @@
 ;; So don't freak out because you don't know what they are doing up top.
 (add-to-list 'load-path "~/.emacs.d/vendor/md4rd")
 (require 'md4rd)
+
+;; ------------------- Google Translate -----------------------
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
