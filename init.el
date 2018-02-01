@@ -61,8 +61,8 @@
 (package-initialize) ;; You might already have this line
 
 ;; ------------------ Set Emacs Default Browser -----------------
-;(setq browse-url-browser-function 'eww-browse-url)
-(setq browse-url-browser-funrction 'browse-url-firefox)
+(setq browse-url-browser-function 'eww-browse-url)
+;;(setq browse-url-browser-funrction 'browse-url-firefox)
 
 ;; ----------------- Hunspell ----------------------
 
