@@ -42,7 +42,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (magit md4rd google-translate s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (latex-extra magit md4rd google-translate s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -190,6 +190,9 @@
 (require 'google-translate-default-ui)
 (global-set-key "\C-ct" 'google-translate-at-point)
 (global-set-key "\C-cT" 'google-translate-query-translate)
+
+;; ------------------- LaTeX Extra Mode -----------------------
+(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
 
 
 
