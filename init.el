@@ -62,7 +62,6 @@
 
 ;; ------------------ Set Emacs Default Browser -----------------
 (setq browse-url-browser-function 'eww-browse-url)
-;;(setq browse-url-browser-funrction 'browse-url-firefox)
 
 ;; ----------------- Hunspell ----------------------
 
