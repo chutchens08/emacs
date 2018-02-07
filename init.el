@@ -136,7 +136,7 @@
 ;; ------------------ Space After Cursor ----------------
 (defun my-insert-space-after-point ()
   (interactive)
-  (save-excursion (insert " ")))
+   (save-excursion (insert " ")))
 (global-set-key (kbd "C-.") 'my-insert-space-after-point)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
