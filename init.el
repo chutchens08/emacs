@@ -30,6 +30,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(border-width 0)
+ '(custom-safe-themes
+   (quote
+    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(md4rd-subs-active
@@ -42,7 +45,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (latex-extra magit md4rd google-translate s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
+    (smart-mode-line-powerline-theme smart-mode-line pulseaudio-control exwm dmenu latex-extra magit md4rd google-translate s request hierarchy minimap ace-window which-key hydra fireplace org-plus-contrib multiple-cursors ace-jump-mode google-this bongo dired-sidebar pianobar auctex switch-window windresize define-word org)))
  '(pdf-latex-command "xetex")
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
@@ -122,11 +125,14 @@
 
 ;; ------------------ Themes ---------------------------
 ;; ------------------ Xrecources-Theme -------------------
-(add-to-list 'load-path "~/.emacs.d/vendor/themes/xresources-theme")
-(require 'xresources-theme)
+;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/xresources-theme")
+;;(require 'xresources-theme)
+;; ------------------ Forest-Blue-Theme ------------------
+(add-to-list 'load-path "~/.emacs.d/vendor/themes/oceanic-theme")
+(require 'oceanic-theme)
 
 ;; ------------------ Toggle Line Numbers --------------
-(global-set-key (kbd "C-3") 'linum-mode)
+(global-set-key (kbd "C-#") 'linum-mode)
 
 ;; ------------------ Autopair -----------------------
 (add-to-list 'load-path "~/.emacs.d/vendor/autopair")
@@ -194,8 +200,22 @@
 
 ;; ------------------- LaTeX Extra Mode -----------------------
 (add-hook 'LaTeX-mode-hook #'latex-extra-mode)
+(global-set-key (kbd "C-1") 'cc-1)
+(global-set-key (kbd "C-2") 'cc-2)
+(global-set-key (kbd "C-3") 'cc-3)
+(global-set-key (kbd "C-4") 'cc-4)
 
+;; -------------------- EXWM -----------------------------
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
+(setq exwm-workspace-number 4)
+(require 'exwm-systemtray)
+(exwm-systemtray-enable)
+(pulseaudio-control-default-keybindings)
 
+;; -------------------- Smart-Mode-Line -------------------
+(setq sml/theme 'powerline)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
