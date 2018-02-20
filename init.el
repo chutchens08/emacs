@@ -105,6 +105,12 @@
 ;; ------------------ Forest-Blue-Theme ------------------
 (add-to-list 'load-path "~/.emacs.d/vendor/themes/nord-theme")
 (require 'nord-theme)
+;; ------------------ Melancholy-Theme --------------------
+;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/melancholy-theme")
+;;(require 'melancholy-theme)
+;; ------------------ Oceanic-Theme --------------------
+;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/oceanic-theme")
+;;(require 'oceanic-theme)
 
 ;; ------------------ Toggle Line Numbers --------------
 (global-set-key (kbd "C-#") 'linum-mode)
@@ -184,18 +190,23 @@
 (require 'exwm)
 (require 'exwm-config)
 (exwm-config-default)
-(setq exwm-workspace-number 4)
+(setq exwm-workspace-number 10)
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
 ;; Pulse Audio while in EXWM
-(pulseaudio-control-default-keybindings)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") 'pulseaudio-control-increase-volume)
+(global-set-key (kbd "<XF86AudioLowerVolume>") 'pulseaudio-control-decrease-volume)
 ;; Swap Workspace
 (global-set-key (kbd "s-s") 'exwm-workspace-swap)
+;; Shut down
+(defun shut-down ()
+  (interactive)
+  (compile "systemctl poweroff"))
+(global-set-key (kbd "s-D") 'shut-down)
 ;; Lockscreen
 (defun lock-screen ()
   (interactive)
   (compile "betterlockscreen -l blur"))
-;; Lockscreen keybind
 (global-set-key (kbd "<XF86ScreenSaver>") 'lock-screen)
 ;; RandR
 (require 'exwm-randr)
