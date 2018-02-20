@@ -1,27 +1,3 @@
-;              .------..                            _------__--___.__.
-;           /            \_                       /            `  `    \
-;         /                \                     |.                     \
-;         /                   \                   \                       |
-;        /    .--._    .---.   |                   \                      |
-;        |  /      -__-     \   |                    ~-/--`-`-`-\         |
-;        | |                |  |                     |          \        |
-;         ||                  ||                     |            |       |
-;         ||     ,_   _.      ||                     |            |       |
-;         ||      e   e      ||  Hey Beavis,         |   _--    |       |
-;          ||     _  |_      ||   pull my finger!     _| =-.    |.-.    |
-;         @|     (o\_/o)     |@   Heh,Heh!!!          o|/o/       _.   |
-;           |     _____     |                        /  ~          \ |
-;            \ ( /uuuuu\ ) /             No way!    (/___@)  ___~    |
-;             \  `====='  /              Ass wipe!!    |_===~~~.`    |
-;              \  -___-  /                         _______.--~     |
-;               |       |            //             \________       |
-;               /-_____-\       .  _//_                      \      |
-;             /           \     \\/////                    __/-___-- -_
-;           /               \    \   /                    /            __\
-;          /__|  AC / DC  |__\   / /                      -| Metallica|| |
-;          | ||           |\ \  / /                       ||          || |
-;          | ||           | \ \/ /                        ||          || |
-
 (package-initialize)
 
 (custom-set-variables
@@ -32,7 +8,7 @@
  '(border-width 0)
  '(custom-safe-themes
    (quote
-    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
  '(fringe-mode 0 nil (fringe))
  '(horizontal-scroll-bar-mode nil)
  '(md4rd-subs-active
@@ -68,7 +44,7 @@
 
 ;; ----------------- Hunspell ----------------------
 
-; find aspell and hunspell automatically
+;;; find aspell and hunspell automatically
 (cond
  ;; try hunspell at first
   ;; if hunspell does NOT exist, use aspell
@@ -89,7 +65,6 @@
 
 (global-set-key (kbd "C-c C-d") 'define-word-at-point)
 (global-set-key (kbd "C-c D") 'define-word)
-
 ;; ------------------- Flyspell -------------------------
 (add-to-list 'load-path "~/.emacs.d/vendor/flyspell")
 (require 'flyspell)
@@ -128,8 +103,8 @@
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/xresources-theme")
 ;;(require 'xresources-theme)
 ;; ------------------ Forest-Blue-Theme ------------------
-(add-to-list 'load-path "~/.emacs.d/vendor/themes/oceanic-theme")
-(require 'oceanic-theme)
+(add-to-list 'load-path "~/.emacs.d/vendor/themes/nord-theme")
+(require 'nord-theme)
 
 ;; ------------------ Toggle Line Numbers --------------
 (global-set-key (kbd "C-#") 'linum-mode)
@@ -212,10 +187,35 @@
 (setq exwm-workspace-number 4)
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
+;; Pulse Audio while in EXWM
 (pulseaudio-control-default-keybindings)
+;; Swap Workspace
+(global-set-key (kbd "s-s") 'exwm-workspace-swap)
+;; Lockscreen
+(defun lock-screen ()
+  (interactive)
+  (compile "betterlockscreen -l blur"))
+;; Lockscreen keybind
+(global-set-key (kbd "<XF86ScreenSaver>") 'lock-screen)
+;; RandR
+(require 'exwm-randr)
+(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+(add-hook 'exwm-randr-screen-change-hook
+          (lambda ()
+            (start-process-shell-command
+             "xrandr" nil "xrandr --output VGA1 --left-of LVDS1 --auto")))
+(exwm-randr-enable)
+
+
 
 ;; -------------------- Smart-Mode-Line -------------------
 (setq sml/theme 'powerline)
+
+;; -------------------- Dmenu ---------------------------
+(global-set-key (kbd "s-SPC") 'dmenu)
+
+;; -------------------- Highlight Current Line ------------
+(global-hl-line-mode +1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -245,5 +245,3 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; ------------------ Access to Org Mode Archives --------------
 (require 'package) (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
-
