@@ -100,11 +100,11 @@
 
 ;; ------------------ Themes ---------------------------
 ;; ------------------ Xrecources-Theme -------------------
-;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/xresources-theme")
-;;(require 'xresources-theme)
+(add-to-list 'load-path "~/.emacs.d/vendor/themes/xresources-theme")
+(require 'xresources-theme)
 ;; ------------------ Forest-Blue-Theme ------------------
-(add-to-list 'load-path "~/.emacs.d/vendor/themes/nord-theme")
-(require 'nord-theme)
+;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/nord-theme")
+;;(require 'nord-theme)
 ;; ------------------ Melancholy-Theme --------------------
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/themes/melancholy-theme")
 ;;(require 'melancholy-theme)
@@ -187,35 +187,35 @@
 (global-set-key (kbd "C-4") 'cc-4)
 
 ;; -------------------- EXWM -----------------------------
-(require 'exwm)
-(require 'exwm-config)
-(exwm-config-default)
-(setq exwm-workspace-number 10)
-(require 'exwm-systemtray)
-(exwm-systemtray-enable)
-;; Pulse Audio while in EXWM
-(global-set-key (kbd "<XF86AudioRaiseVolume>") 'pulseaudio-control-increase-volume)
-(global-set-key (kbd "<XF86AudioLowerVolume>") 'pulseaudio-control-decrease-volume)
-;; Swap Workspace
-(global-set-key (kbd "s-s") 'exwm-workspace-swap)
-;; Shut down
-(defun shut-down ()
-  (interactive)
-  (compile "systemctl poweroff"))
-(global-set-key (kbd "s-D") 'shut-down)
-;; Lockscreen
-(defun lock-screen ()
-  (interactive)
-  (compile "betterlockscreen -l blur"))
-(global-set-key (kbd "<XF86ScreenSaver>") 'lock-screen)
-;; RandR
-(require 'exwm-randr)
-(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
-(add-hook 'exwm-randr-screen-change-hook
-          (lambda ()
-            (start-process-shell-command
-             "xrandr" nil "xrandr --output VGA1 --left-of LVDS1 --auto")))
-(exwm-randr-enable)
+;;(require 'exwm)
+;;(require 'exwm-config)
+;;(exwm-config-default)
+;;(setq exwm-workspace-number 10)
+;;(require 'exwm-systemtray)
+;;(exwm-systemtray-enable)
+;;;; Pulse Audio while in EXWM
+;;(global-set-key (kbd "<XF86AudioRaiseVolume>") 'pulseaudio-control-increase-volume)
+;;(global-set-key (kbd "<XF86AudioLowerVolume>") 'pulseaudio-control-decrease-volume)
+;;;; Swap Workspace
+;;(global-set-key (kbd "s-s") 'exwm-workspace-swap)
+;;;; Shut down
+;;(defun shut-down ()
+;;  (interactive)
+;;  (compile "systemctl poweroff"))
+;;(global-set-key (kbd "s-D") 'shut-down)
+;;;; Lockscreen
+;;(defun lock-screen ()
+;;  (interactive)
+;;  (compile "betterlockscreen -l blur"))
+;;(global-set-key (kbd "<XF86ScreenSaver>") 'lock-screen)
+;;;; RandR
+;;(require 'exwm-randr)
+;;(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+;;(add-hook 'exwm-randr-screen-change-hook
+;;          (lambda ()
+;;            (start-process-shell-command
+;;             "xrandr" nil "xrandr --output VGA1 --left-of LVDS1 --auto")))
+;;(exwm-randr-enable)
 
 
 
