@@ -100,3 +100,6 @@
 (fset 'cc-4
    [?\C-p ?\C-p ?\C-p ?\C-p backspace ?\C-n ?\C-n ?\C-n ?\C-n ?\C-e return return])
 
+;; ------------- Heglob ------------------------
+(fset 'cc-heglob
+   "{\\fontspec{Ezra SIL\C-f")
